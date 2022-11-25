@@ -1,0 +1,16 @@
+---
+import Menu from "./Menu.astro";
+import { MENU } from "../../config";
+---
+
+<div
+  class="sticky top-0 z-40 max-h-full w-full bg-default transition-colors duration-300"
+>
+  <nav
+    class="flex flex-col relative justify-between items-end transition-colors duration-300 py-5"
+  >
+    <div class="flex w-full max-w-7xl items-center justify-between px-4">
+      <Menu menu={MENU} />
+    </div>
+  </nav>
+</div>

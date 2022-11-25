@@ -1,0 +1,19 @@
+---
+import MenuItem from "./MenuItem.astro";
+
+export interface Props {
+  menu: {
+    items: { name: string; href: string }[];
+  };
+}
+
+const { menu } = Astro.props;
+---
+
+<ul class="flex justify-end flex-grow">
+  {
+    menu.items.map((menuItem) => (
+      <MenuItem href={menuItem.href}>{menuItem.name}</MenuItem>
+    ))
+  }
+</ul>

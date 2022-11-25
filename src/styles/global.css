@@ -1,3 +1,21 @@
-body {
-  background-color: #2c2c3b;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    --color-default: 44 44 59;
+
+    @apply bg-default text-slate-900;
+  }
+
+  a:hover,
+  a:focus {
+    text-decoration: underline;
+  }
+
+  a:focus {
+    outline: 2px solid currentColor;
+    outline-offset: 0.25em;
+  }
 }
