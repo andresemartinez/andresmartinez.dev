@@ -1,0 +1,58 @@
+---
+import { parserOptions } from "../../.eslintrc.cjs";
+import JumpToContent from "../components/accesibility/JumpToContent.astro";
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/header/Header.astro";
+import { format, parseISO } from "date-fns";
+import { es } from "date-fns/locale";
+import { capitalize } from "../utils/string.js";
+
+export interface Props {
+  content: {
+    title: string;
+    description: string;
+    publishDate: string;
+    updatedDate?: string;
+  };
+}
+
+const {
+  content: { title, description, publishDate, updatedDate },
+} = Astro.props;
+
+const date = parseISO(publishDate);
+const formattedDate = capitalize(format(date, "LLLL d, yyyy", { locale: es }));
+---
+
+<!DOCTYPE html>
+<html dir="ltr" lang="es">
+  <head>
+    <BaseHead title={title} description={description} />
+  </head>
+
+  <body>
+    <JumpToContent />
+    <Header />
+    <main class="lg:max-w-4xl md:max-w-2xl sm:max-w-xl sm:mx-auto mx-8 h-full">
+      <article id="article" class="w-full">
+        <section class="w-full">
+          <h1 class="text-white text-5xl font-bold mb-1">{title}</h1>
+          <time class="text-gray-400" datetime={date.toString()}
+            >{formattedDate}</time
+          >
+          {
+            updatedDate && (
+              <div>
+                Editado - <time>{updatedDate}</time>
+              </div>
+            )
+          }
+          <hr class="my-4" />
+          <article class="markdown">
+            <slot />
+          </article>
+        </section>
+      </article>
+    </main>
+  </body>
+</html>

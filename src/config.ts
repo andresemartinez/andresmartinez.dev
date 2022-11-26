@@ -14,6 +14,10 @@ export const MENU: Menu = {
       href: "#",
     },
     {
+      name: "Blog",
+      href: "/blog",
+    },
+    {
       name: "Github",
       href: "https://github.com/andresemartinez",
     },

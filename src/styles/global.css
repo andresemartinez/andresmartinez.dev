@@ -18,4 +18,32 @@
     outline: 2px solid currentColor;
     outline-offset: 0.25em;
   }
+
+  .markdown h1 {
+    @apply mt-8 mb-4 text-3xl font-extrabold;
+  }
+
+  .markdown h2 {
+    @apply mt-8 mb-4 text-2xl font-semibold;
+  }
+
+  .markdown h3 {
+    @apply mt-4 mb-2 text-xl font-semibold;
+  }
+
+  .markdown li {
+    @apply list-disc text-white;
+  }
+
+  .markdown ol > li {
+    @apply mb-2 list-decimal;
+  }
+
+  .markdown p {
+    @apply mb-4 text-white;
+  }
+
+  .markdown a > p {
+    @apply mb-0 text-sm;
+  }
 }

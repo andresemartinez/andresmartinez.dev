@@ -1,0 +1,30 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { getSlugFromPath } from "../utils/get-slug-from-path";
+
+const posts = await Astro.glob("./blog/*.md");
+const sortedPosts = posts.sort(
+  (a, b) =>
+    new Date(b.frontmatter.date).valueOf() -
+    new Date(a.frontmatter.date).valueOf(),
+);
+---
+
+<Layout title="Andres Martinez - Blog" description="Mi blog">
+  <main id="content" class="h-[calc(100vh-80px)] mx-20">
+    <div class="grid grid-cols-2 gap-4">
+      {
+        sortedPosts.map((post) => (
+          <a
+            href={`/blog/${getSlugFromPath(post.file)}`}
+            class="flex flex-col border border-gray-500 rounded-lg p-4 bg-violet-900">
+            <span class="text-xl font-semibold text-white">
+              {post.frontmatter.title}
+            </span>
+            <span class="text-white">{post.frontmatter.description}</span>
+          </a>
+        ))
+      }
+    </div>
+  </main>
+</Layout>
