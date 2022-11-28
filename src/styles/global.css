@@ -47,12 +47,17 @@
     @apply mb-0 text-sm;
   }
 
+  .markdown a:not(.heading-link--hidden---effects) {
+    @apply underline decoration-slate-500 
+          decoration-dotted underline-offset-2;
+  }
+
   .markdown code {
     @apply break-words lg:break-normal;
   }
 
   .markdown code:not(.markdown pre code) {
-    @apply bg-[#1D1D26] rounded px-0.5 py-[0.5px];
+    @apply rounded bg-[#1D1D26] px-0.5 py-[0.5px];
   }
 
   /* .markdown .remark-code-title {
@@ -60,6 +65,6 @@
   } */
 
   .markdown pre {
-    @apply bg-[#1D1D26] mx-auto mb-3 rounded p-2 pl-3 font-mono shadow-xl sm:pt-2;
+    @apply mx-auto mb-3 rounded bg-[#1D1D26] p-2 pl-3 font-mono shadow-xl sm:pt-2;
   }
 }
