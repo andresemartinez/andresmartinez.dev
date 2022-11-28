@@ -13,7 +13,8 @@
   "dependencies": {
     "@astrojs/sitemap": "^1.0.0",
     "date-fns": "^2.29.3",
-    "rollup": "^3.4.0"
+    "rollup": "^3.4.0",
+    "tailwind-scrollbar": "^2.0.1"
   },
   "devDependencies": {
     "@astrojs/tailwind": "^2.1.3",

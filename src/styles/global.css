@@ -9,6 +9,11 @@
     @apply bg-default text-white;
   }
 
+  html {
+    scroll-behavior: smooth;
+    @apply scrollbar-thin scrollbar-track-transparent scrollbar-thumb-gray-500;
+  }
+
   a:hover,
   a:focus {
     text-decoration: underline;
