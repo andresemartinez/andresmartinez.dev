@@ -22,5 +22,13 @@
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "cSpell.language": "en,es-ES"
+  "cSpell.language": "en,es-ES",
+  "cSpell.words": [
+    "casteo",
+    "checkeo",
+    "golazo",
+    "supertipo",
+    "Tipar",
+    "tiparla"
+  ]
 }
