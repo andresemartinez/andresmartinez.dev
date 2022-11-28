@@ -6,7 +6,7 @@
   html {
     --color-default: 44 44 59;
 
-    @apply bg-default text-slate-900;
+    @apply bg-default text-white;
   }
 
   a:hover,
@@ -45,5 +45,21 @@
 
   .markdown a > p {
     @apply mb-0 text-sm;
+  }
+
+  .markdown code {
+    @apply break-words lg:break-normal;
+  }
+
+  .markdown code:not(.markdown pre code) {
+    @apply bg-[#1D1D26] rounded px-0.5 py-[0.5px];
+  }
+
+  /* .markdown .remark-code-title {
+    @apply border-t3-purple-300/80 text-t3-purple-200 z-10 -mb-1 mt-3 w-full rounded-t-md border bg-[#191724] px-2 py-1 font-mono;
+  } */
+
+  .markdown pre {
+    @apply bg-[#1D1D26] mx-auto mb-3 rounded p-2 pl-3 font-mono shadow-xl sm:pt-2;
   }
 }
