@@ -13,4 +13,4 @@ Armé este blog para hablar de las cosas que me gustan y compartir mi punto de v
 Si todo sale, bien voy a estar escribiendo más sobre tecnologías copadas, principalmente en español (ya hay bastante contenido en ingles dando vueltas).
 
 Nos vemos la proxima,  
--Andres
+-Andrés

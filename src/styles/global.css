@@ -6,6 +6,9 @@
   html {
     --color-default: 44 44 59;
 
+    --color-background: 44 44 59;
+    --color-foreground: 29 29 38;
+
     @apply bg-default text-white;
   }
 
@@ -36,6 +39,10 @@
     @apply mt-4 mb-2 text-xl font-semibold;
   }
 
+  .markdown h4 {
+    @apply mt-4 mb-2 text-lg font-medium;
+  }
+
   .markdown li {
     @apply list-disc text-white;
   }
@@ -62,14 +69,10 @@
   }
 
   .markdown code:not(.markdown pre code) {
-    @apply rounded bg-[#1D1D26] px-0.5 py-[0.5px];
+    @apply rounded bg-foreground px-0.5 py-[0.5px];
   }
 
-  /* .markdown .remark-code-title {
-    @apply border-t3-purple-300/80 text-t3-purple-200 z-10 -mb-1 mt-3 w-full rounded-t-md border bg-[#191724] px-2 py-1 font-mono;
-  } */
-
   .markdown pre {
-    @apply mx-auto mb-3 rounded bg-[#1D1D26] p-2 pl-3 font-mono shadow-xl sm:pt-2;
+    @apply mx-auto mb-3 rounded bg-foreground p-2 pl-3 font-mono shadow-xl sm:pt-2;
   }
 }

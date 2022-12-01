@@ -6,6 +6,8 @@ module.exports = {
     extend: {
       colors: {
         default: "rgb(var(--color-default) / <alpha-value>)",
+        background: "rgb(var(--color-background) / <alpha-value>)",
+        foreground: "rgb(var(--color-foreground) / <alpha-value>)",
       },
       fontFamily: {
         sans: [
