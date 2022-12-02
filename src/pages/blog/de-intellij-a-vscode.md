@@ -2,7 +2,7 @@
 title: "De IntelliJ a VSCode"
 description: "Porque cambie de IntelliJ a VSCode y como lo configure para no perder ninguna funcionalidad"
 author: "Andres Martinez"
-publishDate: "2022-12-01"
+publishDate: "2022-12-02"
 layout: ../../layouts/BlogPost.astro
 ---
 
@@ -10,11 +10,11 @@ Calculo que se preguntaran _por qué_. Algunos cuestionara por qué usé Intelli
 
 ## ¿Por qué IntelliJ?
 
-Como muchos, mis primeros pasos en el mundillo _web_ fueron con Java + Springboot como back end 🤷‍♂️. Hasta ese momento había trabajado en C o Smalltalk, por lo que IntelliJ fue el primer IDE real que use y fue amor a primer vista.
+Como muchos, mis primeros pasos en el mundillo _web_ fueron con Java + Springboot 🤷‍♂️. Hasta ese momento había trabajado en C o Smalltalk, por lo que IntelliJ fue el primer IDE real que use y fue amor a primer vista.
 
 Si, es pesado, consume ram y procesador, pero la capacidad de introspección del código es inigualable, más allá de que trae incorporado un montón de funcionalidades que en otros IDEs o editores de texto dependen de plugins de terceros. Es, por lejos, la experiencia _out of the box_ más pulida.
 
-Con el tiempo tuve que meter mano en servicios Node.js, o fronts en Angular, pero no tenia muchos motivos para cambiar, IntelliJ nunca me dejo a pata 🤍.
+Con el tiempo tuve que meter mano en servicios hechos en Node.js, o interfaces hechas en Angular, pero no tenia muchos motivos para cambiar, IntelliJ nunca me dejo a pata 🤍.
 
 ## ¿Que cambió?
 
@@ -42,6 +42,45 @@ Por suerte, la solución fue fácil. La mayoría del equipo ya estaba usando VSC
 
 Con esto no solo mejoramos buscabilidad y legibilidad del código, sino que redujimos conflictos tontos de merge y logramos tener PRs más cortitos.
 
-## Adaptación
+## Paridad de funciones
 
-Pero no significo perder todas las funcionalidades..........
+VSCode no esta mal, pero yo no quería perder funciones que ya tenia incorporadas con IntelliJ, asi que agregue algunos plugins:
+
+- [Bookmarks](https://marketplace.visualstudio.com/items?itemName=alefragnani.Bookmarks)
+- [Code Spell Checker](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker)
+- [EditorConfig for VS Code](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig)
+- [GitLens — Git supercharged](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens)
+- [Remote - SSH](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh)
+
+Y toque algunas configuraciones:
+
+```json:settings.json
+{
+    "files.autoSave": "onFocusChange",
+    "typescript.implementationsCodeLens.enabled": true,
+    "typescript.inlayHints.enumMemberValues.enabled": true,
+    "javascript.inlayHints.enumMemberValues.enabled": true,
+    "javascript.inlayHints.functionLikeReturnTypes.enabled": true,
+    "javascript.inlayHints.parameterTypes.enabled": true,
+    "javascript.inlayHints.propertyDeclarationTypes.enabled": true,
+    "javascript.inlayHints.variableTypes.enabled": true,
+    "typescript.inlayHints.parameterNames.enabled": "all",
+    "javascript.inlayHints.parameterNames.enabled": "literals",
+    "window.restoreWindows": "none",
+    "markdown.preview.breaks": true,
+    "explorer.confirmDelete": false,
+    "gitlens.hovers.avatars": false,
+    "explorer.autoReveal": false,
+    "explorer.confirmDragAndDrop": false,
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "window.openFilesInNewWindow": "on",
+    "window.openFoldersInNewWindow": "on",
+}
+```
+
+## Después de algunos meses
+
+Seguiría usando IntelliJ para cualquier otra cosa, pero para React o Node.js no esta mal. Tiene la ventaja de que es mucho más liviano, abre más rápido y permite estandarizar configuraciones en un proyecto. Inclusive me encontré usándolo para cosas que antes hubiera usado Vim (justamente porque IntelliJ tarda más en abrir).
+
+Creo que si lo único que necesitas es un editor de texto con resaltado de sintaxis y un mínimo intellisense VSCode no te va a defraudar. Ahora, si querés poder debugear conflictos de dependencias, ver el árbol de Beans, tener intellisense sobre queries SQL que escribiste en un string, que cuando moves un archivo se acomoden los imports, o cualquier otra funcionalidad un poquito más avanzada, de repente IntelliJ es de las pocas opciones que hay dando vueltas.

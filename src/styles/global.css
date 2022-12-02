@@ -27,6 +27,14 @@
     outline-offset: 0.25em;
   }
 
+  article > section :is(ul, ol) {
+    padding-inline-start: 1em;
+  }
+
+  article > section nav :is(ul, ol) {
+    padding-inline-start: inherit;
+  }
+
   .markdown h1 {
     @apply mt-8 mb-4 text-3xl font-extrabold;
   }
@@ -41,6 +49,10 @@
 
   .markdown h4 {
     @apply mt-4 mb-2 text-lg font-medium;
+  }
+
+  .markdown ul {
+    @apply mb-4 text-white;
   }
 
   .markdown li {
