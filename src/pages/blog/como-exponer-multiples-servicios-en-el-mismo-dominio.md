@@ -130,7 +130,7 @@ http:
 
 Por ultimo, vamos a ejecutar el siguiente comando que levanta el container de Traefik:
 
-```sh
+```bash
 docker run --name traefik \
     -d \
     -v "$PWD/config:/etc/traefik" \
@@ -142,11 +142,11 @@ Y, si todo salio bien, deberíamos poder acceder a `http://localhost:8080/dashbo
 
 También deberíamos poder acceder a nuestros servicios usando las rutas `/users` y `/products`.
 
-```sh
+```bash
 curl localhost:8081/users
 ```
 
-```sh
+```bash
 curl localhost:8081/products
 ```
 
@@ -183,7 +183,7 @@ Después, a la hora de levantar el container de Traefik, vamos a agregar algunos
 
 En el container de Traefik vamos a configurar el middleware para resetear la ruta, dado que lo vamos a usar de manera global. Ademas, el label `traefik.enable=true` permite que podamos usar el dashboard.
 
-```sh
+```bash
 docker run --name traefik \
     -d \
     -v "$PWD/config:/etc/traefik" \
@@ -200,7 +200,7 @@ Con el container corriendo, si todo salio bien, deberíamos poder acceder a `htt
 
 Ahora queda dockerizar y levantar nuestros servicios. Para los ejemplos en Node.js que deje arriba podemos usar el siguiente Dockerfile.
 
-```dockerfile
+```docker
 FROM node:18
 ENV NODE_ENV=production
 
@@ -217,7 +217,7 @@ CMD [ "node", "src/index.js" ]
 
 Y para levantar los servicios podemos usar los siguientes comandos.
 
-```sh
+```bash
 docker run --name users-service \
     -d \
     -l 'traefik.enable=true' \
@@ -229,7 +229,7 @@ docker run --name users-service \
     users-service
 ```
 
-```sh
+```bash
 docker run --name products-service \
     -d \
     -l 'traefik.enable=true' \
@@ -243,11 +243,11 @@ docker run --name products-service \
 
 Con los tres containers corriendo deberíamos poder acceder a nuestros servicios usando las rutas `/users` y `/products`.
 
-```sh
+```bash
 curl localhost:8081/users
 ```
 
-```sh
+```bash
 curl localhost:8081/products
 ```
 
