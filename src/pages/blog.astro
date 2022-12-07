@@ -1,4 +1,5 @@
 ---
+import { Image } from "@astrojs/image/components";
 import Layout from "../layouts/Layout.astro";
 import { getSlugFromPath } from "../utils/get-slug-from-path";
 
@@ -11,13 +12,15 @@ const sortedPosts = posts.sort(
 ---
 
 <Layout title="Andres Martinez - Blog" description="Mi blog">
-  <main id="content" class="h-[calc(100vh-80px)] mx-20">
-    <div class="grid grid-cols-2 gap-4">
+  <main
+    id="content"
+    class="h-[calc(100vh-80px)] w-full max-w-screen-2xl mx-auto">
+    <div class="grid mx-4 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4">
       {
         sortedPosts.map((post) => (
           <a
             href={`/blog/${getSlugFromPath(post.file)}`}
-            class="flex flex-col border border-gray-500 rounded-lg p-4 bg-violet-900">
+            class="flex flex-col rounded-lg border border-gray-500 bg-violet-900 p-4">
             <span class="text-xl font-semibold text-white">
               {post.frontmatter.title}
             </span>

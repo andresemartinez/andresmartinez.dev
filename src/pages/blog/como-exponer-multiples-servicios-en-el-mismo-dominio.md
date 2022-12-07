@@ -18,11 +18,11 @@ Acá es cuando acudimos a un proxy inverso...
 
 Podríamos decir que un proxy _a secas_ se sitúa entre los clientes e internet, ofuscando a los clientes a través de una única IP o dándoles acceso a una red privada.
 
-![Proxy ilustrado](/images/proxy.webp)
+![Proxy ilustrado](/image/blog/proxy.webp)
 
 Un proxy inverso, por el contrario, se sitúa entre internet y los servicios, permitiéndole a los clientes acceder a diferentes servicios a traves de la misma IP (dominio) y facilitando el control de acceso a dichos servicios.
 
-![Proxy inverso ilustrado](/images/reverse-proxy.webp)
+![Proxy inverso ilustrado](/image/blog/reverse-proxy.webp)
 
 ## Un ejemplo con Traefik
 

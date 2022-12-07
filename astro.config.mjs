@@ -1,6 +1,7 @@
-import { defineConfig } from "astro/config";
+import image from "@astrojs/image";
 import sitemap from "@astrojs/sitemap";
 import tailwind from "@astrojs/tailwind";
+import { defineConfig } from "astro/config";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeExternalLinks from "rehype-external-links";
 import rehypeSlug from "rehype-slug";
@@ -42,5 +43,11 @@ export default defineConfig({
     },
     extendDefaultPlugins: true,
   },
-  integrations: [sitemap(), tailwind()],
+  integrations: [
+    tailwind(),
+    image({
+      serviceEntryPoint: "@astrojs/image/sharp",
+    }),
+    sitemap(),
+  ],
 });
