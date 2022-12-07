@@ -1,6 +1,7 @@
 ---
 import JumpToContent from "../components/accesibility/JumpToContent.astro";
-import BaseHead from "../components/BaseHead.astro";
+import BaseHead from "../components/head/BaseHead.astro";
+import SeoHead from "../components/head/SeoHead.astro";
 import Header from "../components/header/Header.astro";
 import "../styles/global.css";
 
@@ -15,7 +16,9 @@ const { title, description } = Astro.props;
 <!DOCTYPE html>
 <html dir="ltr" lang="es">
   <head>
-    <BaseHead title={title} description={description} />
+    <BaseHead />
+    <SeoHead type="website" title={title} description={description} />
+    <title>{title}</title>
   </head>
   <body>
     <JumpToContent />

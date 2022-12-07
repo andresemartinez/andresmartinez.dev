@@ -1,0 +1,53 @@
+---
+export type Props = {
+  title: string;
+  description: string;
+  type: "website" | "article";
+  image?: {
+    url: string;
+    alt: string;
+    type: string;
+    height: number;
+    width: number;
+  };
+};
+
+const {
+  title,
+  description,
+  type,
+  image = {
+    url: "/image/placeholder-social.webp",
+    alt: 'Fondo oscuro con texto "andresmartinez.dev"',
+    width: 1920,
+    height: 1080,
+    type: "image/jpeg",
+  },
+} = Astro.props;
+
+const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
+---
+
+<!-- Page Metadata -->
+<link rel="canonical" href={canonicalUrl} />
+<meta name="description" property="og:description" content={description} />
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content={type} />
+<meta property="og:url" content={Astro.url} />
+<meta property="og:title" content={title} />
+<meta property="og:site_name" content="andresmartinez.dev" />
+
+<meta property="og:image" content={new URL(image.url, Astro.url)} />
+<meta property="og:image:type" content={image.type} />
+<meta property="og:image:width" content={`${image.height}`} />
+<meta property="og:image:height" content={`${image.width}`} />
+<meta property="og:image:alt" content={image.alt} />
+<meta property="og:locale" content="es_AR" />
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:url" content={Astro.url} />
+<meta property="twitter:title" content={title} />
+<meta property="twitter:description" content={description} />
+<meta property="twitter:image" content={new URL(image.url, Astro.url)} />

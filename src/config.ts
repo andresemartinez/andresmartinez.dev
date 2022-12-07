@@ -23,3 +23,10 @@ export const MENU: Menu = {
     },
   ],
 };
+
+export type Frontmatter = {
+  title: string;
+  description: string;
+  publishDate: string;
+  updatedDate?: string;
+}
