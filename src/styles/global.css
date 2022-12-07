@@ -44,6 +44,10 @@
     padding-inline-start: inherit;
   }
 
+  .markdown {
+    @apply flex w-full flex-col items-start justify-start px-4 pb-10 leading-relaxed text-slate-900;
+  }
+
   .markdown h1 {
     @apply mt-8 mb-4 text-3xl font-extrabold;
   }
@@ -62,6 +66,10 @@
 
   .markdown ul {
     @apply mb-4 text-white;
+  }
+
+  .markdown ol {
+    @apply mb-4 w-full text-white;
   }
 
   .markdown li {
@@ -86,7 +94,7 @@
   }
 
   .markdown code {
-    @apply break-words lg:break-normal;
+    @apply break-words [direction:ltr] [unicode-bidi:embed] lg:break-normal;
   }
 
   .markdown code:not(.markdown pre code) {
